@@ -1,19 +1,18 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-// import './App.css'
-import CreateAPI from './Components/CreateAPI'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import CreateAPI from './Components/CreateAPI';
+import ReadAPI from './Components/ReadAPI';
+
 
 function App() {
-
-  // https://www.anapioficeandfire.com/api/characters
- 
-
   return (
-    <>
-<CreateAPI/>
-    </>
-  )
+    <Router>
+      <Routes>
+        <Route path="/" element={<CreateAPI />} />
+        <Route path="/ReadAPI" element={<ReadAPI />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
