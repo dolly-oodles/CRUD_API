@@ -37,8 +37,8 @@ const CreateAPI = () => {
               placeholder="Enter Title"
               type="text"
               {...register('title', { required: 'Title is required' ,minLength: {
-                      value: 20,
-                      message: "Title must be at least 20 characters"}})}
+                      value: 5,
+                      message: "Title must be at least 5 characters"}})}
               className="w-full h-12 px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
             />
             {errors.title && <span className="text-red-500">{errors.title.message}</span>}
@@ -50,8 +50,8 @@ const CreateAPI = () => {
               placeholder="Enter Description"
               type="text"
               {...register('description', { required: 'Description is required',minLength: {
-                      value: 80,
-                      message: "Title must be at least 80 characters"} })}
+                      value: 20,
+                      message: "Title must be at least 20 characters"} })}
               className="w-full h-12 px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
             />
             {errors.description && <span className="text-red-500">{errors.description.message}</span>}
