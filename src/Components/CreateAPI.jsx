@@ -19,7 +19,7 @@ const CreateAPI = () => {
       <div className="bg-white p-8 rounded-lg shadow-lg w-[1000px] m-4">
         <h2 className="text-2xl font-bold mb-4 text-center text-blue-700 ">Create Product</h2>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-          <div>
+          {/* <div>
             <label htmlFor="id" className="block text-gray-700">Id</label>
             <input
               id="id"
@@ -29,19 +29,19 @@ const CreateAPI = () => {
               className="w-full h-12 px-3 py-2 border rounded-md focus:outline-none focus:border-blue-700"
             />
             {errors.id && <span className="text-red-500">{errors.id.message}</span>}
-          </div>
+          </div> */}
           <div>
-            <label htmlFor="title" className="block text-gray-700">Title</label>
+            <label htmlFor="itemName" className="block text-gray-700">Product Name</label>
             <input
-              id="title"
-              placeholder="Enter Title"
+              id="itemName"
+              placeholder="Enter product Name"
               type="text"
-              {...register('title', { required: 'Title is required' ,minLength: {
+              {...register('itemName', { required: 'Product Name is required' ,minLength: {
                       value: 5,
-                      message: "Title must be at least 5 characters"}})}
+                      message: "Product Name must be at least 5 characters"}})}
               className="w-full h-12 px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
             />
-            {errors.title && <span className="text-red-500">{errors.title.message}</span>}
+            {errors.itemName && <span className="text-red-500">{errors.itemName.message}</span>}
           </div>
           <div>
             <label htmlFor="description" className="block text-gray-700">Description</label>
@@ -70,17 +70,7 @@ const CreateAPI = () => {
             />
             {errors.price && <span className="text-red-500">{errors.price.message}</span>}
           </div>
-          <div>
-            <label htmlFor="brand" className="block text-gray-700">Brand</label>
-            <input
-              id="brand"
-              placeholder="Enter Brand"
-              type="text"
-              {...register('brand', { required: 'Brand is required' })}
-              className="w-full h-12 px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
-            />
-            {errors.brand && <span className="text-red-500">{errors.brand.message}</span>}
-          </div>
+          
           <div>
             <label htmlFor="category" className="block text-gray-700">Category</label>
             <input
@@ -91,6 +81,18 @@ const CreateAPI = () => {
               className="w-full h-12 px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
             />
             {errors.category && <span className="text-red-500">{errors.category.message}</span>}
+          </div>
+
+          <div>
+            <label htmlFor="stock" className="block text-gray-700">Stock</label>
+            <input
+              id="stock"
+              placeholder="Enter Stock"
+              type="text"
+              {...register('stock', { required: 'Stock is required' })}
+              className="w-full h-12 px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+            />
+            {errors.stock && <span className="text-red-500">{errors.stock.message}</span>}
           </div>
           <div className="flex justify-end">
             <button

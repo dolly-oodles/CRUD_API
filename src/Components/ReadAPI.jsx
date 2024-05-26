@@ -37,22 +37,22 @@ const ReadAPI = () => {
               <th scope="col" className="px-6 py-3">Description</th>
               <th scope="col" className="px-6 py-3">Category</th>
               <th scope="col" className="px-6 py-3">Price</th>
-              <th scope="col" className="px-6 py-3">Brand</th>
+              <th scope="col" className="px-6 py-3">Stock</th>
               <th scope="col" className="px-6 py-3">Actions</th>
             </tr>
           </thead>
           <tbody>
             {productState.map((product) => (
-              <tr key={product.id} className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">{product.title}</th>
+              <tr key={product._id} className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
+                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">{product.itemName}</th>
                 <td className="px-6 py-4">{product.description}</td>
                 <td className="px-6 py-4">{product.category}</td>
                 <td className="px-6 py-4">{product.price}</td>
-                <td className="px-6 py-4">{product.brand}</td>
+                <td className="px-6 py-4">{product.stock}</td>
                 <td className="px-6 py-4 text-center">
                   <div className="flex justify-center space-x-2">
                     <button onClick={() => handleEdit(product)} className="font-medium text-white bg-blue-700 py-1 px-4 rounded-md hover:bg-blue-800 transition-colors duration-300">Edit</button>
-                    <button onClick={() => handleDelete(product.id)} className="font-medium text-white bg-red-600 py-1 px-4 rounded-md hover:bg-red-700 transition-colors duration-300">Delete</button>
+                    <button onClick={() => handleDelete(product._id)} className="font-medium text-white bg-red-600 py-1 px-4 rounded-md hover:bg-red-700 transition-colors duration-300">Delete</button>
                   </div>
                 </td>
               </tr>
